@@ -22,7 +22,7 @@ function App(){
         options={{
           title: 'Login',
           headerStyle:{
-            backgroundColor:'#f4511e',
+            backgroundColor:'#670099',
 
           },
           headerTintColor: '#fff',
