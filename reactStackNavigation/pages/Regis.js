@@ -1,6 +1,6 @@
 //import * as React from 'react';
 
-import {StyleSheet, View,Text,SafeAreaView,TextInput} from 'react-native';
+import {StyleSheet, View,Text,SafeAreaView,TextInput, ScrollView, Image} from 'react-native';
 
 import React, {useState} from 'react';
 
@@ -17,8 +17,14 @@ const Regis = ({navigation}) =>{
     return(
 
         <SafeAreaView style={{ flex: 1 }}>
+            <ScrollView>
       <View style={styles.container}>
-        <Text>Insert any text in below input</Text>
+      <Image
+      source={require('../images/zona_icon_test.png')}
+      style={{width:80,height:100}}
+      />
+   
+        <Text> Regis Here</Text>
         <TextInput
           value={userName}
           onChangeText={(userName) => setUserName(userName)}
@@ -63,6 +69,7 @@ style={styles.input}
 />
 <Text style={{color: 'purple'}}>{userPassConf}</Text>
  </View>
+ </ScrollView>
  </SafeAreaView>
       
     );
