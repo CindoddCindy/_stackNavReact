@@ -11,7 +11,8 @@ import {
   Text,
   SafeAreaView,
   TextInput,
-  Button
+  Button,
+  Image
   
 } from 'react-native';
 
@@ -25,6 +26,12 @@ const Login = () => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
+     
+      <Image
+      source={require('../images/zona_icon_test.png')}
+      style={{width:80,height:100}}
+      />
+   
         <Text>Login</Text>
         <TextInput
           value={userName}
