@@ -9,6 +9,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import Login from './pages/Login';
+import Regis from './pages/Regis';
 
 const Stack = createStackNavigator();
 
@@ -26,6 +27,20 @@ function App(){
 
           },
           headerTintColor: '#fff',
+          headerBackTitleStyle:{
+            fontWeight:'bold',
+          },
+        }}
+        />
+        <Stack.Screen
+        name="Regis"
+        component={Regis}
+        options={{
+          title: 'Regis',
+          headerStyle:{
+            backgroundColor:"#670099"
+          },
+          headerTintColor:'#fff',
           headerBackTitleStyle:{
             fontWeight:'bold',
           },

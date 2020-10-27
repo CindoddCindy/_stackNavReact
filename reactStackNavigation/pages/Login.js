@@ -16,7 +16,7 @@ import {
   
 } from 'react-native';
 
-const Login = () => {
+const Login = ({navigation}) => {
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState ('');
   const onPressLearnMore = () => {
@@ -55,6 +55,11 @@ const Login = () => {
         >
 
         </Button>
+
+        <Button
+            onPress={() => navigation.navigate('Regis')}
+            title="Go to Second Page"
+          />
          
 
       </View>
