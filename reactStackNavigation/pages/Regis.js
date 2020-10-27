@@ -1,6 +1,6 @@
 //import * as React from 'react';
 
-import {StyleSheet, View,Text,SafeAreaView,TextInput, ScrollView, Image} from 'react-native';
+import {StyleSheet, View,Text,SafeAreaView,TextInput, ScrollView, Image,Button} from 'react-native';
 
 import React, {useState} from 'react';
 
@@ -13,6 +13,11 @@ const Regis = ({navigation}) =>{
     const [userBirthDate, setUserBirthDate] =useState ('');
     const [userPassword, setUserPassword] = useState('');
     const [userPassConf, setUSerPassConf] = useState('');
+
+    const onPressLearnMore = () => {
+        //For generating alert on buttton click
+        alert('Login');
+      }
     
     return(
 
@@ -33,42 +38,51 @@ const Regis = ({navigation}) =>{
         />
         <Text style={{color: 'blue'}}>{userName}</Text>
         <Text style={{color: 'purple'}}>{userName}</Text>
-<TextInput
-value={userEmail}
-onChangeText={(userEmail) => setUserEmail(userEmail)}
-placeholder={'UserEmail'}
-style={styles.input}
-/>
-<Text style={{color: 'purple'}}>{userEmail}</Text>
-<TextInput
-value={userBirthDate}
-onChangeText={(userBirthDate) => setUserBirthDate(userBirthDate)}
-placeholder={'UserBirthDate'}
-style={styles.input}
-/>
-<Text style={{color: 'purple'}}>{userBirthDate}</Text>
-<TextInput
-value={userPhoneNumb}
-onChangeText={(userPhoneNumb) => setUserPhoneNumb(userPhoneNumb)}
-placeholder={'UserPhoneNumb'}
-style={styles.input}
-/>
-<Text style={{color: 'purple'}}>{userPhoneNumb}</Text>
-<TextInput
-value={userPassword}
-onChangeText={(userPassword) => setUserPassword(userPassword)}
-placeholder={'UserPassword'}
-style={styles.input}
-/>
-<Text style={{color: 'purple'}}>{userPassword}</Text>
-<TextInput
-value={userPassConf}
-onChangeText={(userPassConf) => setUSerPassConf(userPassConf)}
-placeholder={'UserPassConf'}
-style={styles.input}
-/>
-<Text style={{color: 'purple'}}>{userPassConf}</Text>
- </View>
+        <TextInput
+        value={userEmail}
+        onChangeText={(userEmail) => setUserEmail(userEmail)}
+        placeholder={'UserEmail'}
+        style={styles.input}
+        />
+        <Text style={{color: 'purple'}}>{userEmail}</Text>
+        <TextInput
+        value={userBirthDate}
+        onChangeText={(userBirthDate) => setUserBirthDate(userBirthDate)}
+        placeholder={'UserBirthDate'}
+        style={styles.input}
+        />
+        <Text style={{color: 'purple'}}>{userBirthDate}</Text>
+        <TextInput
+        value={userPhoneNumb}
+        onChangeText={(userPhoneNumb) => setUserPhoneNumb(userPhoneNumb)}
+        placeholder={'UserPhoneNumb'}
+        style={styles.input}
+        />
+        <Text style={{color: 'purple'}}>{userPhoneNumb}</Text>
+        <TextInput
+        value={userPassword}
+        onChangeText={(userPassword) => setUserPassword(userPassword)}
+        placeholder={'UserPassword'}
+        style={styles.input}
+        />
+        <Text style={{color: 'purple'}}>{userPassword}</Text>
+        <TextInput
+        value={userPassConf}
+        onChangeText={(userPassConf) => setUSerPassConf(userPassConf)}
+        placeholder={'UserPassConf'}
+        style={styles.input}
+        />
+        <Text style={{color: 'purple'}}>{userPassConf}</Text>
+
+        <Button 
+        onPress={onPressLearnMore}
+         title="Click Me"
+         color="#670099"
+        >
+
+        </Button>
+
+        </View>
  </ScrollView>
  </SafeAreaView>
       
