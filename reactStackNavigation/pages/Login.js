@@ -10,12 +10,18 @@ import {
   View,
   Text,
   SafeAreaView,
-  TextInput
+  TextInput,
+  Button
+  
 } from 'react-native';
 
 const Login = () => {
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState ('');
+  const onPressLearnMore = () => {
+    //For generating alert on buttton click
+    alert('Login');
+  }
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
@@ -34,6 +40,16 @@ const Login = () => {
         style={styles.input}
         />
         <Text style ={{color:'purple'}}>{userEmail}</Text>
+
+        <Button 
+        onPress={onPressLearnMore}
+         title="Click Me"
+         color="#670099"
+        >
+
+        </Button>
+         
+
       </View>
     </SafeAreaView>
   );
