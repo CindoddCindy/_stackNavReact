@@ -38,13 +38,14 @@ const Login = ({navigation}) => {
   return (
     
     <SafeAreaView style={{ flex: 1 }}>
-      <ScrollView>
+      
       <View style={styles.container}>
      
       <Image
       source={require('../images/zona_icon_test.png')}
       style={styles.images}
       />
+      <ScrollView>
    
    <Text style={styles.title}>Input Name</Text>
         <TextInput
@@ -62,6 +63,7 @@ const Login = ({navigation}) => {
         placeholder={'UserEmail'}
         style={styles.input}
         />
+        
        
 
         <TouchableOpacity
@@ -86,12 +88,13 @@ onPress={() => navigation.navigate('Regis')}
               Sign Up
           </Text>
         </TouchableOpacity>
+        </ScrollView>
 
 
          
 
       </View>
-      </ScrollView>
+    
     </SafeAreaView>
     
   );
@@ -101,7 +104,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    marginTop: 20,
+    //marginTop: 0,
     backgroundColor: '#ffffff',
   },
   input: {
