@@ -12,9 +12,11 @@ import {
   SafeAreaView,
   TextInput,
   Button,
-  Image
+  Image,
+  TouchableOpacity,
   
 } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const Login = ({navigation}) => {
   const [userName, setUserName] = useState('');
@@ -23,47 +25,75 @@ const Login = ({navigation}) => {
     //For generating alert on buttton click
     alert('Login');
   }
+
+  const handlerLongClick = () => {
+    //handler for Long Click
+    alert('Button Long Pressed');
+  };
+
+  const handlerClick = () => {
+    //handler for Long Click
+    alert('Button Long Pressed');
+  };
   return (
+    
     <SafeAreaView style={{ flex: 1 }}>
+      <ScrollView>
       <View style={styles.container}>
      
       <Image
       source={require('../images/zona_icon_test.png')}
-      style={{width:80,height:100}}
+      style={styles.images}
       />
    
-        <Text>Login</Text>
+   <Text style={styles.title}>Input Name</Text>
         <TextInput
           value={userName}
           onChangeText={(userName) => setUserName(userName)}
           placeholder={'UserName'}
           style={styles.input}
         />
-        <Text style={{color: 'purple'}}>{userName}</Text>
+
+<Text style={styles.title}>Input Email</Text>
+       
         <TextInput
         value={userEmail}
         onChangeText={(userEmail)=> setUserEmail(userEmail)}
         placeholder={'UserEmail'}
         style={styles.input}
         />
-        <Text style ={{color:'purple'}}>{userEmail}</Text>
+       
 
-        <Button 
-        onPress={onPressLearnMore}
-         title="Click Me"
-         color="#670099"
-        >
+        <TouchableOpacity
+onPress={() => navigation.navigate('Regis')}
+          activeOpacity={0.6}
+          style={styles.buttonStyleLogin}>
+          <Text style={styles.buttonTextStyle}>
+              Login
+          </Text>
+        </TouchableOpacity>
 
-        </Button>
 
-        <Button
-            onPress={() => navigation.navigate('Regis')}
-            title="Go to Second Page"
-          />
+      
+<TouchableOpacity
+onPress={() => navigation.navigate('Regis')}
+          //onLongPress={handlerLongClick}
+          //onPress={handlerClick}
+          //Here is the trick
+          activeOpacity={0.6}
+          style={styles.buttonStyleSignUp}>
+          <Text style={styles.buttonSignUpTextStyle}>
+              Sign Up
+          </Text>
+        </TouchableOpacity>
+
+
          
 
       </View>
+      </ScrollView>
     </SafeAreaView>
+    
   );
 };
 
@@ -75,13 +105,73 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
   },
   input: {
-    width: 250,
+    width: 350,
     height: 44,
     padding: 10,
-    marginTop: 20,
+    marginTop: 10,
     marginBottom: 10,
     backgroundColor: '#e8e8e8'
   },
+
+  images:{
+    width: 80,
+    height: 80,
+    padding: 10,
+    marginTop: 30,
+    marginBottom: 20,
+
+  },
+  title: {
+    fontSize: 12,
+    alignItems: 'center',
+    fontWeight: 'bold',
+    color: 'purple',
+    marginTop: 20,
+    
+  },
+  buttonStyleLogin: {
+    backgroundColor: '#670099',
+      color: 'white',
+      width: "80%",
+      borderRadius: 25,
+      textAlign: 'center',
+      fontWeight: 'bold',
+      marginLeft: '11%',
+      marginRight: '11%',
+      padding: "2%",
+      fontSize:  27,
+      marginTop: '5%'
+   
+  },
+  buttonStyleSignUp: {
+    backgroundColor: 'white',
+      color: 'purple',
+      width: "80%",
+      borderRadius: 25,
+      textAlign: 'center',
+      fontWeight: 'bold',
+      marginLeft: '11%',
+      marginRight: '11%',
+      padding: "2%",
+      fontSize:  27,
+      marginTop: '5%'
+   
+  },
+  buttonTextStyle: {
+    color: '#fff',
+    textAlign: 'center',
+    fontSize: 16,
+  },
+
+  buttonSignUpTextStyle: {
+    color: '#670099',
+    textAlign: 'center',
+    fontSize: 16,
+
+  },
+ 
+ 
+
 });
 
 export default Login;
